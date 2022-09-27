@@ -4,14 +4,6 @@
 #include <iostream>
 #include "Car.h"
 
-void Print(Car outputCar)
-{
-    std::cout << "Car Make: " << outputCar.make << std::endl << "Car Model: " << outputCar.model << std::endl << "Number of doors: " << outputCar.doors << std::endl <<
-        "Mileage: " << outputCar.mileage << std::endl << "Miles per Gallon: " << outputCar.mpg << std::endl << "Petrol: " << outputCar.petrol << std::endl;
-
-    std::cout << std::endl;
-
-}
 int main()
 {
     
@@ -21,7 +13,7 @@ int main()
     car1.doors = 4;
     car1.mileage = 1500.0f;
     car1.mpg = 45.0f;
-    car1.petrol = 350.0f;
+    car1.petrol = 10;
 
     Car car2;
     car2.make = "Speed";
@@ -40,8 +32,16 @@ int main()
     car3.petrol = 400.0f;
 
 
-    Print(car1);
-    Print(car2);
-    Print(car3);
+    car1.Print();
+    car2.Print();
+    car3.Print();
+
+    float miles;
+    std::cout << "Please enter the miles driven: ";
+    std::cin >> miles;
+
+    car1.Drive(miles);
+
+    car1.Print();
 
 }
