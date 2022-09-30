@@ -6,6 +6,11 @@ class Car
 {
 public:
 
+	Car();
+	Car(std::string newMake, std::string newModel, int newDoors, float newMpg);
+
+	~Car();
+
 	void Print();
 	void Drive(float miles);
 

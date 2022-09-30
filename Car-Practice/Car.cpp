@@ -1,6 +1,33 @@
 #include "Car.h"
 #include <iostream>
 
+Car::Car()
+    : make("")
+    , model("")
+    , doors(0)
+    , mileage(0)
+    , mpg(0)
+    , petrol(0)
+{
+    std::cout << "\nCar constructed.";
+}
+
+Car::Car(std::string newMake, std::string newModel, int newDoors, float newMpg)
+    : make(newMake)
+    , model(newModel)
+    , doors(newDoors)
+    , mileage(0)
+    , mpg(newMpg)
+    , petrol(200)
+{
+    std::cout << "\nCar constructed.";
+}
+
+Car::~Car()
+{
+    std::cout << "\n" << make << " " << model <<  " destroyed.";
+}
+
 void Car::Print()
 {
     std::cout << "\nCar Make: " << make << std::endl << "Car Model: " << model << std::endl << "Number of doors: " << doors << std::endl <<
