@@ -7,7 +7,7 @@ class Car
 public:
 
 	Car();
-	Car(std::string newMake, std::string newModel, int newDoors, float newMpg);
+	Car(std::string newMake, std::string newModel, int newDoors, float newMpg, int newSerialNo);
 
 	~Car();
 
@@ -20,5 +20,6 @@ public:
 	float mileage;
 	float mpg;
 	float petrol;
+	int serialNo;
 };
 

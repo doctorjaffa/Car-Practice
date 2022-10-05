@@ -8,24 +8,26 @@ Car::Car()
     , mileage(0)
     , mpg(0)
     , petrol(0)
+    , serialNo(0)
 {
-    std::cout << "\nCar constructed.";
+    //std::cout << "\nCar constructed.";
 }
 
-Car::Car(std::string newMake, std::string newModel, int newDoors, float newMpg)
+Car::Car(std::string newMake, std::string newModel, int newDoors, float newMpg, int newSerialNo)
     : make(newMake)
     , model(newModel)
     , doors(newDoors)
     , mileage(0)
     , mpg(newMpg)
     , petrol(200)
+    , serialNo(newSerialNo)
 {
-    std::cout << "\nCar constructed.";
+    //std::cout << "\nCar constructed.";
 }
 
 Car::~Car()
 {
-    std::cout << "\n" << make << " " << model <<  " destroyed.";
+    //std::cout << "\n" << make << " " << model <<  " destroyed.";
 }
 
 void Car::Print()
