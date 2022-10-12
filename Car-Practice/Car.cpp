@@ -1,6 +1,7 @@
 #include "Car.h"
 #include <iostream>
 
+//Default constructor.
 Car::Car()
     : make("")
     , model("")
@@ -13,6 +14,7 @@ Car::Car()
     //std::cout << "\nCar constructed.";
 }
 
+//User populated constructor.
 Car::Car(std::string newMake, std::string newModel, int newDoors, float newMpg, int newSerialNo)
     : make(newMake)
     , model(newModel)
@@ -25,11 +27,13 @@ Car::Car(std::string newMake, std::string newModel, int newDoors, float newMpg, 
     //std::cout << "\nCar constructed.";
 }
 
+//Default destructor.
 Car::~Car()
 {
     //std::cout << "\n" << make << " " << model <<  " destroyed.";
 }
 
+//Print the car information.
 void Car::Print()
 {
     std::cout << "\nCar Make: " << make << std::endl << "Car Model: " << model << std::endl << "Number of doors: " << doors << std::endl <<
@@ -39,14 +43,17 @@ void Car::Print()
 
 }
 
+//Drive the car a given distance. 
 void Car::Drive(float miles)
 {
 
     std::cout << "\n" << model << " " << make << " driving " << miles << " miles.\n";
 
+    //Calculate the amount of fuel used.
     float fuelUsed; 
     fuelUsed = miles / mpg;
 
+    //If the petrol will go below empty, determine how far the car can drive before running out.
     if (petrol - fuelUsed <= 0)
     {
         float actualMiles;
@@ -54,10 +61,12 @@ void Car::Drive(float miles)
 
         petrol = 0;
 
+        //Add the miles able to be driven to the car mileage.
         mileage += actualMiles;
 
         std::cout << "\nYou have run out of fuel.\n";
     }
+    //If the car will not run of petrol, simply subtract the fuel used and add the miles driven to the mileage.
     else
     {
         petrol -= fuelUsed;

@@ -2,23 +2,27 @@
 #include <string>
 #include <iostream>
 
+//Default constructor.
 ParkingSpace::ParkingSpace()
 	: isSpaceFull(false)
 	, parkedCar()
 {
 }
 
+//Default destructor.
 ParkingSpace::~ParkingSpace()
 {
 	//std::cout << "Parking space has been destroyed.";
 }
 
+//Park a car inside the parking space and store that car instance in parkedCar.
 void ParkingSpace::Park(Car carParking)
 {
 	 isSpaceFull = true;
 	 parkedCar = carParking;
 }
 
+//Remove a car from the parking space, if there is one occupying it.
 void ParkingSpace::Exit()
 {
 	if (isSpaceFull == false)
@@ -32,6 +36,7 @@ void ParkingSpace::Exit()
 	}
 }
 
+//Print the name of the car parked in the parking space, if there is one occupying the space.
 void ParkingSpace::Print()
 {
 	if (isSpaceFull == false)
